@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comparações</title>
+    <script>
+        // Ativa verificações adicionais de variáveis
+        // Modo "chato" do JavaScript
+        'use strict'
+
+        // parseInt() -> TENTA converter um texto em número, se possível
+        // Caso o texto não contenha um número válido, o resultado será NaN
+        // (Not a Number)
+        let numero = parseInt(prompt('Informe um número inteiro MENOR que 1000'))
+
+        if(isNaN(numero)) { // O resultado da conversão foi NaN?
+            alert('Desculpe, mas isso não é um número.')
+        }
+        else if(numero < 1000) {
+            alert('Parabéns, você acertou!')
+        }
+        // JS, um = é usado para atribuição (colocar valor em variável)
+        // Para comparações, precisamos pelo menos 2 sinais de ==
+        else if(numero === 100) {
+            alert('Desculpe, mas 1000 não é menor do que 1000.')
+        }
+        else {
+            alert('Infelizmente, você não acertou!')
+        }
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
