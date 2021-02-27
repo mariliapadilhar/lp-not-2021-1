@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operadores Lógicos</title>
+    <script>
+        'use strict'
+
+        /* OPERADORES LÓGICOS EM JS
+            && -> E lógico (AND)
+            || -> OU lógico (OR)
+            ! -> NÃo lógico (NOT)
+            != -> operador de diferença
+            !== -> operador de diferença exata
+        */
+
+        let a = 5, b = 10, c = 0
+
+        // TESTANDO OPERADOR &&
+        document.write(a > 1 && b < 15)
+        document.write('<br>')
+        document.write(b === 10 && c < 0)
+        document.write('<hr>')
+
+        // TESTANDO OPERADOR ||
+        document.write(a === 5 || c !== 0)
+        document.write('<br>')
+        document.write(b !== 10 || a !== 5)
+        document.write('<hr>')
+        
+        // TESTANDO OPERADOR !
+        // ordem de resolução dos operadores lógicos ( ! && ||)
+        // Essa ordem pode ser modificada com o uso de ()
+        document.write(!(a === 0 && b > 20))
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
