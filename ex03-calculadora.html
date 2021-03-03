@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modelo de documento HTML</title>
+    <script>
+        // 'use strict' impede que variáveis sejam declaradas
+        // sem o uso de let, var ou const
+        // Inicializar variáveis diretamente é má prática de
+        // programação
+        'use strict'
+        
+        /*
+            Solicite ao usuário para informar dois números e um operador
+            matemático. Você usará três prompt(), um para cada número e
+            o terceiro para o operador.
+            Aceite os seguintes operadores:
+            + => adição
+            - => subtração
+            *, X ou x => multiplicação
+            / ou : => divisão
+            Efetue o cálculo apropriado de acordo com o operador informado
+            e informe o resultado usando document.write().
+        */
+
+        let num1, num2, operador
+
+        num1 = parseFloat(prompt('Digite o 1º Número: '))
+        num2 = parseFloat(prompt('Digite o 2º Número: '))
+        operador = prompt('Digite o operador matemático: ')
+
+        /*if(isNaN(num1 || num2)) {
+            alert('ERRO: Número inválido!')
+        }*/
+        
+        if(operador === '/') {
+            document.write(`${num1} / ${num2} é igual a: ${num1 / num2} `) 
+        }
+        else if(operador === '-') {
+            document.write(`${num1} - ${num2} é igual a: ${num1 - num2} `) 
+        }
+        else if(operador === '*') {
+            document.write(`${num1} * ${num2} é igual a: ${num1 * num2} `) 
+        }
+        else if(operador === '+') {
+            document.write(`${num1} + ${num2} é igual a: ${num1 + num2} `) 
+        }
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

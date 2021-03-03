@@ -32,17 +32,24 @@
 
       let ano = parseInt(prompt('Digite um ano MAIOR ou IGUAL 1582 e descubra se é bissexto:'))
 
-      if(isNaN(ano)){
-          alert('O que você digitou não é um número.')
+      if(isNaN(ano) || ano < 1582){
+          alert('ERRO: o ano informado é inválido!.')
       }
 
-      else if(ano % 400 === 0 || (ano % 4 === 0 && ano % 100 !== 0)) {
-          alert('O ano que você digitou é bissexto!')
+      else if(ano % 400 === 0 || (ano % 4 === 0 && !(ano % 100 === 0))) {
+          alert('O ano ' + ano + ' é bissexto!')
       }
+      // Mensagem usando string template
+      // alert(`O ano ${ano} é bissexto!`)
 
       else{
-          alert('O ano que você digitou não é bissexto!')
+          alert('O ano ' + ano + ' não é bissexto!')
       }
+
+      // Outro exemplo de interpolação de variáveis em string template
+      //let a = 5, b = 4, c = 2
+      //alert('O valor de ' + a + ' somado com ' + b + ' somado com ' + c + ' é igual a ' + (a + b + c))
+      //alert(`O valor de ${​​a}​​ somado com ${​​b}​​ somado com ${​​c}​​ é igual a ${​​a + b + c}​​`)
     </script>
 </head>
 <body>
