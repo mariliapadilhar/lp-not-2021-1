@@ -34,7 +34,31 @@
         if(isNaN(num1) || isNaN(num2)) {
              alert('ERRO: Número inválido!')
           }
-        
+
+        else{
+            // switch..case é uma estrutura de decisão que compara uma única variável 
+            // contra uma série de valores 
+            switch(operador) {
+                case '+':
+                    document.write(`${num1} + ${num2} é igual a: ${num1 + num2} `)
+                    break
+                case '-':
+                    document.write(`${num1} - ${num2} é igual a: ${num1 - num2} `)
+                    break
+                case '*': // case vazio
+                case 'X': // case vazio
+                case 'x':
+                    document.write(`${num1} * ${num2} é igual a: ${num1 * num2} `)
+                    break
+                case '/': // case vazio
+                case ':':
+                    document.write(`${num1} / ${num2} é igual a: ${num1 / num2} `)
+                    break
+                default:  // 'else' do switch
+                    alert('ERRO: o operador informado é inválido!')
+            }
+        }
+        /*
         else if(operador === '/' || operador === ':') {
             document.write(`${num1} / ${num2} é igual a: ${num1 / num2} `) 
         }
@@ -50,7 +74,9 @@
         else {
             alert('ERRO: o operador informado é inválido!')
         }
-        
+        */
+
+
 
     </script>
 </head>
