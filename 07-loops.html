@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        'use strict'
+
+        // loops ou estruturas de repetição são recursos que toda linguagem de programação
+        // disponibiliza para que instruções possam ser executadas mais de um vez
+
+        // 1) LOOP while 
+
+        /* Pedir ao usuário que informe números na sequência e vamos somar 
+           até que ele informe o valor 0. Depois disso, vamos apresentar a soma. 
+           */
+
+        let soma = 0, num
+
+        while (num !== 0) {
+
+        
+        // Number tem o mesmo efeito que o parseFloat
+        num = Number(prompt('Informe um número para somar ou 0 para terminar: '))
+            
+            if (! isNaN(num)) { //Se for um número válido
+                soma += num // equivale a: soma = soma + num
+            }
+        }
+        alert(`A soma dos números informados é ${soma}.`)
+
+        /*Características do loop while
+            1) Quantidade de execuções: indeterminada
+            2) Garantia de execução: 0 vezes (não tem garantia)
+            3) Local de teste: no início
+            */
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

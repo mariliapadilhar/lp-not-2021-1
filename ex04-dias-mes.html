@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modelo de documento HTML</title>
+    <script>
+        // 'use strict' impede que variáveis sejam declaradas
+        // sem o uso de let, var ou const
+        // Inicializar variáveis diretamente é má prática de
+        // programação
+        'use strict'
+        
+        /*
+            Solicite ao usuário que informe o número correspondente a um
+            mês, na faixa entre 1 e 12.
+
+            Usando a estrutura switch..case, informe de volta ao usuário quantos
+            dias possui o mês informado, conforme segue:
+
+            * JANEIRO, MARÇO, MAIO, JULHO, AGOSTO, OUTUBRO e DEZEMBRO: 31 dias
+            * ABRIL, JUNHO, SETEMBRO e NOVEMBRO: 30 dias
+            * FEVEREIRO: 28 ou 29 dias (em anos bissextos)
+        */
+
+        let mes
+
+        mes = parseInt(prompt('Digite um número entre 1 e 12 referente a um mês e descubra quantos dias tem esse mês: '))
+
+        if (isNaN(mes) || mes < 1 || mes > 12) {
+            alert('ERRO: número inválido!')
+        }
+
+        else {
+            switch (mes) {
+                case 1:
+                case 3:
+                case 5:
+                case 7:
+                case 8:
+                case 10:
+                case 12:   
+                    alert('O mês que você escolheu tem 31 dias!') 
+                    break
+                case 4:
+                case 6:
+                case 7:
+                case 11:
+                    alert('O mês que você escolheu tem 30 dias!')
+                    break
+                
+                default:
+                    alert('O mês que você escolheu é Fevereiro que 28 ou 29 dias (em anos bissextos)!')
+            }
+        }
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
