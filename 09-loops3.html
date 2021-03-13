@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+        'use strict'
+
+        // Contagem de 1 a 10
+        /* Três partes do loop for (separadas por ponto e vírgula)
+            1) Inicialização: a variável de controle ganha seu valor inicial
+            2) Condição: o loop for executa enquanto essa condição for verdadeira
+            3) Incremento: responsável por alterar o valor da variável de controle
+        */
+
+        for(let i = 1; i <= 10; i++) { // i++ significa i = i + 1
+            document.write(i + '<br>')
+        }
+
+        document.write('<hr>')
+        
+        // Contagem regressiva de 10 a 1 
+
+        for(let i = 10; i >= 1; i--) {  // i-- significa i = i - 1
+            document.write(i + '<br>')
+        }
+
+        document.write('<hr>')
+
+        // Contagem de 1 a 100, pulando de 3 em 3 
+
+        for(let i = 1; i <= 100; i += 3) {
+            document.write(i + '<br>')
+        }
+
+        /*Características do loop for
+            1) Quantidade de execuções: determinada ou determinável
+            2) Garantia de execução: 0 vezes (sem garantia)
+            3) Local de teste: no início
+        */
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
