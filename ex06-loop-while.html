@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modelo de documento HTML</title>
+    <script>
+        // 'use strict' impede que variáveis sejam declaradas
+        // sem o uso de let, var ou const
+        // Inicializar variáveis diretamente é má prática de
+        // programação
+        'use strict'
+        
+        /*
+            
+            A AUTOBURACON S/A é uma empresa de administração de rodovias. Como
+            um padrão da empresa, toda rodovia administrada que tem mais de 200km
+            de extensão possui um pedágio a cada 31km e um posto de atendimento ao
+            usuário a cada 23km.
+
+            Peça para o usuário informar o comprimento da rodovia, um número inteiro
+            maior que 200. Valide a entrada com do..while até obter uma resposta correta.
+
+            Em seguida, usando um loop while, percorra os quilômetros da rodovia e 
+            informe com document.write todos aqueles que têm um pedágio ou um posto
+            de atendimento ao usuário da AUTOBURACON S/A.
+
+        */
+
+        let extensao 
+
+        do {
+            extensao = parseInt(prompt('Informa a extensão da rodovia (> 200):'))
+        } while (isNaN(extensao) || extensao <= 200)
+
+        /*
+        
+        let km = 1
+        while (km <= extensao) {
+            if(km % 31 === 0) {
+                document.write(`No km ${km} há um pedágio.<br>`)
+            }
+            if(km % 23 === 0) {
+                document.write(`No km ${km} há um posto de atendimento ao usuário. <br>`)
+            }
+
+            km++
+        }
+
+        */
+
+        for(let km = 1; km <= extensao; km++) {
+            if(km % 31 === 0) {
+                document.write(`No km ${km} há um pedágio.<br>`)
+            }
+            if(km % 23 === 0) {
+                document.write(`No km ${km} há um posto de atendimento ao usuário. <br>`)
+            }
+        }
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
