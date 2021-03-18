@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modelo de documento HTML</title>
+    <script>
+        // 'use strict' impede que variáveis sejam declaradas
+        // sem o uso de let, var ou const
+        // Inicializar variáveis diretamente é má prática de
+        // programação
+        'use strict'
+        
+        /*
+            Peça ao usuário que informe um número inteiro maior que 1 e
+            implemente um for que calcule o valor do fatorial dele,
+            começando o cálculo pelo próprio número e terminando em 1.
+            
+            Exemplos:
+            
+            5! = 5 * 4 * 3 * 2 * 1
+            7! = 7 * 6 * 5 * 4 * 3 * 2 * 1         
+        */
+
+        let num, total = 1
+
+        do {
+            num = parseInt(prompt('Digite um número inteiro: '))
+        } while (isNaN(num) || num < 1)
+
+        for (let i = num; i > 0; i--) {
+            document.write(`${total} * ${i} <br>`)
+            total *= i
+        }
+        
+        document.write(`O total da fatoração do número ${num} é ${total}.`)
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
