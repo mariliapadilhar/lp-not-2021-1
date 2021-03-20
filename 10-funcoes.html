@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funções</title>
+    <script>
+        'use strict'
+       
+        // 5! = 5 * 4 * 3 * 2 * 1 (120)
+        // 4! = 4 * 3 * 2 * 1
+
+        let fat5 = 1
+        for(let i = 5; i > 1; i--) {
+            fat5 = fat5 * i 
+        }
+
+        alert('O fatorial de 5 é ' + fat5)
+
+        let fat4 = 1
+        for(let i = 4; i > 1; i--) {
+            fat4 *= i
+        }
+
+        alert('O fatorial de 4 é ' + fat4)
+
+        // Princípio DRY = DON'T REPEAT YOURSELF
+        // Função é um trecho de código escrito apenas uma vez e pode ser executado várias vezes
+
+        // fatorial = nome da função
+        // num = parâmetro da função
+        function fatorial(num) {      // declaração da função
+            let fat = 1
+            for(let i = num; i > 1; i--){
+                fat *= i
+            }
+            return fat     // retorno da função
+        }
+
+        // Chamada de função. O valor retornado pela função será atribuído à variável x
+        let x = fatorial(5)
+        let y = fatorial(4)
+        alert('O fatorial de 5 calculado pela função é ' + x)
+        alert('O fatorial de 4 calculado pela função é ' + y)
+
+        // Função para calcular a área de uma das seguintes formas geométricas: quadriláteros, triângulos e elipse
+
+        function calArea(base, altura, forma) {
+            let area
+            switch (forma) {
+                case 'Q': 
+                    area = base * altura
+                    break
+                case 'T': 
+                    area = base * altura / 2
+                    break
+                case 'E': 
+                    area = (base / 2) * (altura / 2) * Math.PI
+                    break
+
+                default: 
+                    area = NaN
+            }
+            return area
+        }
+
+        let areaTerreno = calArea(8, 25, 'Q')
+        alert('Área da forma: ' + areaTerreno)
+
+        // Chamada de função direto dentro do alert
+        alert('Área da forma: ' + calArea(7, 5, 'T'))
+
+        alert('Área da forma: ' + calArea(2, 3, 'E'))
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 10 Funções</title>
+    <script>
+        'use strict'
+
+        /*
+            Escreva uma função que receba dois números e retorne o maior entre eles.
+            Retorne undefined caso os números seja iguais entre si.
+        */
+
+        function ordenacao(num1, num2) {
+            let maior
+            if (num1 > num2) {
+                maior = num1
+            }
+            else if (num1 < num2) {
+                maior = num2
+            }
+            else {
+                maior = undefined
+            }
+            return maior
+        }
+
+        alert('O número maior é: ' + ordenacao(5, 3))
+        alert('O número maior é: ' + ordenacao(3, 5))
+        alert('O número maior é: ' + ordenacao(5, 5))
+    
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
