@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        'use strict'
+
+        // FUNÇÃO SEM RETORNO 
+
+        /* Geralmente, funções retornam um valor para quem as chama por meio 
+            palavra-chave return. No entanto, existem funções que apenas 
+            desempenham uma tarefa, sem retornar valor algum.
+        */
+
+        function traco(tamanho) {
+            for(let i = 1; i <= tamanho; i ++) {
+                document.write('-')
+            }
+            document.write('<br>')
+            // note que, nessa função não há a palavra-chave return
+        }
+
+        // Note também que a função NÃO é atribuída a uma variável.
+        traco(20)
+        traco(50)
+        traco(15)
+
+        // FUNÇÃO SEM PARÊMETRO
+
+        /* Uma funçao (independente se retorna ou não algum valor) pode não receber
+            parâmetro algum. Nesse caso, ficam os parâmetros vazios à frente do 
+            nome da função.
+        */
+
+        function agora() {   // retorna a hora atual do computador
+            let diaAtual = new Date
+            return diaAtual.getHours() + ':' + diaAtual.getMinutes() + ':' + diaAtual.getSecunds()
+        }
+
+        alert(agora())
+
+        // função sem parâmetro e sem valor de retorno
+        function msgErro() {
+            alert('ERRO INESPERADO. Contate o suporte técnico pelo ramal XXX.0')
+        }
+        
+        msgErro()
+
+        // FUNÇÕES DETERMINÍSTICAS X FUNÇÕES NÃO-DETERMINÍSTICAS
+
+        /* Função DETERMINÍSTICA -> dados os mesmos argumentos, retornará sempre o mesmo resultado
+
+            Função NÃO determinística -> o valor de retorno independente do(s) parâmetros
+        */
+
+        // função determinística
+        function potencia(base, expoente) {
+            return base ** expoente
+        }
+        
+        alert(potencia(2, 5))   // 32 sempre
+        alert(potencia(3, 3))   // 27 sempre
+
+        // A função agora() declarada acima é um exemplo de função não-determinística
+        // a cada execução retornará um resultado diferente
+
+        // Um exeplo de função não-determinística fornecido pelo próprio JS é a
+        // Math.randow() A cadas execução ela retornará um número diferente, na faixa entre 0 e 1
+        
+        alert('Número aleatório: ' + Math.randow())
+        alert('Número aleatório: ' + Math.randow())
+
+        // Função não determinística que gera um número aleatório inteiro entre 1 e 60
+        // Para retirar as casas decimais, usamos a função Math.floor()
+        function megasena() {
+            return Math.floor(Math.randow() * 60)
+        }
+
+        alert('Número para mensagem: ' + megasena())
+
+        // FUNÇÃO COM PARÂMETRO OPICIONAL
+
+        /* Os últimos parâmetro de uma função podem ser transformados em 
+            parâmetros opicionais, caso se forneça um valor padrão a ser utilizado
+            no caso de esses parâmetro não terem sidos passados
+        */
+
+        function calArea(base, altura, forma = 'Q') {
+            let area
+            switch (forma) {
+                case 'Q': 
+                    area = base * altura
+                    break
+                case 'T': 
+                    area = base * altura / 2
+                    break
+                case 'E': 
+                    area = (base / 2) * (altura / 2) * Math.PI
+                    break
+
+                default: 
+                    area = NaN
+            }
+            return area
+        }
+
+        let areaTriangulo = calArea(10, 7, 'T')
+        let areaEclipse = calArea(6, 4, 'E')
+        let areaQuadr1 = calArea(8, 2.5, 'Q')
+
+        // Note que, na chamada a seguir, não será passado o último
+        // parâmetro. Nesse caso, será calculada a área de um quadrilátero,
+        // pois o valor padrão do parâmetro opcional é 'Q'.
+
+        let areaQuadr2 = calArea(5, 9)
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
