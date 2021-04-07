@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário de Saudação</title>
+    <style>
+        div, fieldset {
+            margin-bottom: 20px; 
+        }
+        #saudacao {
+            background-color: aliceblue;
+            padding: 10px;
+        }
+        div label{
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Formulário de Saudação</h1>
+    <div>
+        <label for="primeiro-nome">Primeiro Nome</label>
+        <input id="primeiro-nome">
+    </div>
+
+    <div>
+        <label for="sobrenome">Sobrenome</label>
+        <input id="sobrenome">
+    </div>
+
+    <div>
+        <label for="forma-tratamento">Forma de tratamento</label>
+        <select id="forma-tratamnto">
+            <option>(Selecione)</option>
+            <option>Vossa Majestade</option>
+            <option>Excelentissímo(a)</option>
+            <option>Ilustrissímo(a)</option>
+            <option>Vossa Senhoria</option>
+            <option>Senhor(a)</option>
+            <option>Cremosissímo</option>
+        </select>
+    </div>
+
+    <fieldset>
+        <legend>Sexo</legend>
+        <input id="masculino" type="radio" name="sexo">
+        <label for="masculino">Masculino</label>
+        <br>
+        <input id="feminino" type="radio" name="sexo" checked>
+        <label for="feminino">Feminino</label>
+
+    </fieldset>
+
+    <div>
+        <label for="hora-dia">Hora do Dia</label>
+        <input id="hora-dia" type="number" min="0" max="23">
+    </div>
+
+    <fieldset>
+        <legend>Opções de exibições</legend>
+        <input id="alert" type="checkbox">
+        <label for="alert">Exibir com alert()</label>
+        <br>
+        <input id="document" type="checkbox">
+        <label for="document">Exibir no documento</label>
+    </fieldset>
+
+    <div id="saudacao">
+        <!--Aqui vai aparecer a saudação se a opção "Exibir no documento"
+            estiver marcada -->
+    </div>
+
+    <div>
+        <button id="enviar">Enviar</button>
+    </div>
+
+    <!---->
+
+    <script>
+            'use strict'
+
+        /* Captura dos elementos */
+        // const elPrimeiroNome = document.getElementByID('primeiro-nome')
+        const elPrimeiroNome = document.querySelector('#primeiro-nome')
+        const elSobrenome = document.getElementByID('sobrenome')
+        const elFormaTratamento = document.getElementByID('forma-tratamento')
+        const elMasculino = document.getElementByID('marculino')
+        const elFeminino = document.getElementByID('feminino')
+        const elHoraDia = document.querySelector('#hora-dia')
+        const elAlert = document.querySelector('#alert')
+        const elDocument = document.querySelector('#document')
+        const elSaudacao = document.querySelector('#saudacao')
+        const elEnviar = document.querySelector('#enviar')
+
+        function validar() {
+            // Retorna true caso todos os campos do formulário tiverem
+            // sido preenchidos corretamente, ou false caso contrário
+
+            if (elPrimeiroNome === '') {
+                alert('O primeiro nome deve ser preenchido.')
+                elPrimeiroNome.focus() // Coloca o cursor no campo
+                return false
+            }
+
+        }
+    </script>
+    
+</body>
+</html>

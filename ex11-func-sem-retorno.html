@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modelo de documento HTML</title>
+    <script>
+        // 'use strict' impede que variáveis sejam declaradas
+        // sem o uso de let, var ou const
+        // Inicializar variáveis diretamente é má prática de
+        // programação
+        'use strict'
+        
+        /*
+
+            Peça ao usuário para que informe um número entre 1 e 100 e um caractere,
+            que deve ser diferente de espaço em branco. Use um prompt() para colher
+            cada um desses dados e faça as validações correspondentes.
+
+            Escreva uma função que recebe como parâmetros um número e um caractere
+            e gere no documento um padrão de texto conforme o exemplo abaixo. Essa
+            função deve apenas desenhar o padrão, sem retornar valor algum.
+            
+            Se o caractere informado for * e o número selecionado for 11, serão
+            geradas 11 linhas de padrão de texto, a primeira linha contendo
+            uma vez o caractere, a segunda linha contendo o caractere duas
+            vezes, e assim por diante:
+
+            *
+            **
+            ***
+            ****
+            *****
+            ******
+            *******
+            ********
+            *********
+            **********
+            ***********
+
+            Não se esqueça de fazer a chamada à função para executá-la e exibir o resultado
+            no documento.
+
+        */
+
+        let num, carac
+
+        // Número entre 1 e 100
+        do {
+            num = parseInt(prompt('Informe um número entre 1 e 100:'))
+        } while(isNaN(num) || num < 1 || num > 100)
+
+        // Caractere diferente de espaço em branco
+        do {
+            carac = prompt('Informe um caractere diferente de espaço em branco:')
+        } while(carac === ' ')
+
+        // Declaração da função
+        function desenharPadrao(numero, caractere) {
+            for(let linha = 1; linha <= numero; linha++) {  // Controla as linhas
+                for(let c = 1; c <= linha; c++)  {  // Controla cada caratere da linha
+                    document.write(caractere)
+                }
+                document.write('<br>')  // Pula a linha
+            }
+        }
+
+        // Chamada da função com as informações fornecidas pelo usuário
+        desenharPadrao(num, carac)
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
