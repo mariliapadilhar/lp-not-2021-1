@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        'use strict'
+
+    function embarque() {
+       for (let km = 1; km <= 400; km ++) {
+           if (km % 50 === 0 || km === 1) {
+               document.write(`No km ${km} existe uma estação de embarque e desembarque.<br>`)
+           }
+       }
+    }
+
+    let quilometro
+
+    do {
+        quilometro = parseInt(prompt('Informe o número do quilômetro: (1 a 400)'))
+    } while (isNaN(quilometro) || !(quilometro >= 1 && quilometro <= 400))
+
+    switch (quilometro) {
+        case 98:
+        case 190:
+        case 283:
+        case 379:
+            alert('Posto de conveniência da Rede Mil Grau')
+        break
+        case 155:
+        case 355:
+            alert('Posto da Polícia Ferroviária (sim, isso existe!)')
+        break
+        case 137:
+            alert('Aeroporto Interplanetário de Virapratos')
+        break
+        case 204:
+            alert('Hotel Cacique Internacional 6 estrelas')
+        break
+        case 311:
+            alert('Boleli shopping center')
+        break
+        case 356:
+            alert('Acesso ao Acqua Park Unidade III')
+        break
+
+        default:
+            alert('Nada aqui!')
+    }
+
+    embarque()
+
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
