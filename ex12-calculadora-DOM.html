@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora DOM</title>
+    
+</head>
+<body>
+    <h1>Calculadora DOM</h1>
+
+    <div>
+        <label for="num1">Primeiro número</label>
+        <input id="num1" type="number">
+    </div>
+
+    <div>
+        <label for="oper">Operações</label>
+        <select id="oper">
+            <option>Selecione</option>
+            <option>Soma +</option>
+            <option>Subtração -</option>
+            <option>Multiplicação *</option>
+            <option>Divisão /</option>
+        </select>
+    </div>
+
+    <div>
+        <label for="num2">Segundo número</label>
+        <input id="num2" type="number">
+    </div>
+
+    <div>
+        <button id="calcular">Calcular</button> 
+    </div>
+
+    <div id="resultado"></div>
+
+    <script>
+        'use strict'
+
+        // 1) Capturar os elementos HTML
+        // 2) Declarar a função de validação do formulário
+        // 3) Declarar a função que faz o cálculo, de acordo com 
+        //    a operaçõa escolhida pelo usuário. Dentro desta função, 
+        //    deve ser chamada a função de validação.
+        //4) Associar a função que faz o cálculo ao evento 'click' do botão.
+
+        const num1= document.getElementById('num1')
+        const elOperacao = document.querySelector('#oper')
+        const num2 = document.getElementById('num2')
+        const elBotao = document.querySelector('#calcular')
+
+        function validar() {
+            if (num1.value === '') {
+                alert('O primeiro número deve ser preenchido.')
+                num1.focus() 
+                return false
+            }
+
+            if (elOperacao.selectedIndex === 0) {
+                alert('Selecione uma operação.')
+                elFormaTratamento.focus()
+                return false
+            }
+
+            if (num2.value === '') {
+                alert('O segundo número deve ser preenchido.')
+                num2.focus() 
+                return false
+            }
+
+            if(isNaN(num1.value) || isNaN(num2.value)) {
+             alert('ERRO: Número inválido!')
+                return false
+            }
+
+            return true 
+        }
+
+        function calcular() {
+            if (validar()) {
+                let numero1, numero2 
+                numero1 = parseFloat(num1.value)
+                numero2 = parseFloat(num2.value)
+                switch(elOperacao.selectedIndex) {
+                    case 1: 
+                        alert(numero1 + numero2)
+                        break
+                    case 2:
+                        alert(numero1 - numero2)
+                        break
+                    case 3:
+                        alert(numero1 * numero2)
+                        break
+                    case 4:
+                        alert(numero1 / numero2)
+                    break
+                }
+            } 
+        }
+
+        elBotao.addEventListener('click', calcular)
+        
+    </script>
+</body>
+</html>
