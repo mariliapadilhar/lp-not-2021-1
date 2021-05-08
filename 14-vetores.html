@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página modelo</title>
+    <script>
+        // Ativa verificações adicionais de variáveis
+        // Modo "chato" do JavaScript
+        'use strict'
+
+        /****************************************************
+            VETORES
+            
+            - Vetores permitem armazenar vários valores em uma única variável
+            - Nos vetores, os valores são armazenados em uma sequência numerada
+              de posições, sendo que a PRIMEIRA POSIÇÃO é a de NÚMERO 0 (zero)
+        */
+
+        // Criando um vetor vazio
+        // Em JavaScript, não se determina o tamanho máximo de elementos
+        // no momento da criação do vetor
+        let vazio1 = []         // Forma mais recente
+        let vazio2 = Array()    // Forma tradicional
+
+        // Criando vetores já com elementos.
+        // É possível colocar qualquer tipo de dados válido dentro de um vetor
+        let frutas = ['banana', 'maçã', 'uva', 'pera']     // Forma + recente
+        let numeros = Array(20, 13, 2, 34, 42, 49)          // Forma tradicional
+        
+        // Um mesmo vetor pode receber vários tipos de dados
+        let mix = [-15, 'João', false, null, undefined]
+
+        // Acessando os valores dos elementos de um vetor
+        
+        // Primeiro elemento do vetor frutas
+        document.write(frutas[0] + '<br>')
+        
+        // Acessando o quarto elemento do vetor numeros
+        document.write(numeros[3] + '<br>')
+
+        // Verificando a quantidade de elementos de um vetor: LENGTH
+        document.write('Quantidade de elementos do vetor frutas: ')
+        document.write(frutas.length + '<br>')
+        document.write('Quantidade de elementos do vetor numeros: ')
+        document.write(numeros.length + '<br>')
+
+        // Último elemento do vetor frutas
+        document.write(frutas[frutas.length - 1] + '<br>')
+
+        // Último elemento do vetor numeros
+        document.write(numeros[numeros.length - 1] + '<br>')
+
+        // Alterando o primeiro elemento do vetor frutas
+        frutas[0] = 'jabuticaba'
+        document.write(frutas[0] + '<br>')
+        document.write('Vetor frutas: ' + frutas + '<br>')
+
+        // Alterando o terceiro elemento do vetor numeros
+        numeros[2] = 33
+        document.write(numeros[2] + '<br>')
+        document.write('Vetor numeros: ' + numeros + '<br>')
+
+        // Inserindo um novo elemento no FINAL do vetor: push()
+        let carros = []     // Vetor vazio
+        document.write('Vetor carros antes: ' + carros + '<br>')
+        // Inserindo um novo valor no final do vetor carros
+        carros.push('Maverick')
+        document.write('Vetor carros depois: ' + carros + '<br>')
+        carros.push('Opala')
+        document.write('Vetor carros depois: ' + carros + '<br>')
+        carros.push('Fusca')
+        document.write('Vetor carros depois: ' + carros + '<br>')
+
+        frutas.push('melancia')
+        document.write('Vetor frutas depois: ' + frutas + '<br>')
+
+        // Inserindo um novo elemento no ÍNICIO do vetor: unshift()
+        carros.unshift('DeLorean')
+        document.write('carros: ' + carros + '<br>')
+        carros.unshift('Belina')
+        document.write('carros: ' + carros + '<br>')
+        carros.unshift('Chevette')
+        document.write('carros: ' + carros + '<br>')
+
+        // Retirando um elemento do FINAL do vetor: pop()
+        let retirado = carros.pop()
+        document.write(retirado + '<br>')
+        document.write('carros: ' + carros + '<br>')
+        retirado = carros.pop()
+        document.write(retirado + '<br>')
+        document.write('carros: ' + carros + '<br>')
+
+        // Retirando um elemento do INÍCIO  do vetor: shift()
+        retirado = carros.shift()
+        document.write(retirado + '<br>')
+        document.write('carros: ' + carros + '<br>')
+        retirado = carros.shift()
+        document.write(retirado + '<br>')
+        document.write('carros: ' + carros + '<br>')
+
+        // Inserindo um elemento em uma posição específica: splice()
+        // Parâmetros do splice para inserção: 
+        // 1º a posição onde vai acontecer a inserção
+        // 2º quantos elementos serão remvidos na operação? (para inserção deve ser 0)
+        // 3º o valor a ser inserido
+
+        carros.splice(1, 0, 'Brasília')
+        document.write('carros: ' + carros + '<br>')
+        carros.splice(2, 0, 'Alpha Romeo')
+        document.write('carros: ' + carros + '<br>')
+        carros.splice(0, 0, 'Variant') // mesmo que: carros.unshift('Variant')
+        document.write('carros: ' + carros + '<br>')
+        carros.splice(carros.length, 0, 'Corcel') // mesmo que: carros.push('Corcel')
+        document.write('carros: ' + carros + '<br>')
+
+        // Retirando elementos de uma posição específica: splice()
+        // Parâmetros de splice() para remoção:
+        // 1º posição onde será feita a reirada
+        // 2º quantos elementos serão retirados? 
+        // Não tem o terceiro parâmetro
+
+        retirado = carros.splice(3, 1)
+        document.write(retirado + '<br>')
+        document.write('carros: ' + carros + '<br>')
+        retirado = carros.splice(1, 2)
+        document.write(retirado + '<br>')
+        document.write('carros: ' + carros + '<br>')
+        
+        retirado = carros.splice(0, 1) // mesmo que carros.shift()
+        document.write(retirado + '<br>')
+        document.write('carros: ' + carros + '<br>')
+
+        retirado = carros.splice(carros.length -1, 1) // mesmo que: carros.pop()
+        document.write(retirado + '<br>')
+        document.write('carros: ' + carros + '<br>')
+        
+        // Substituição de um elemento no vetor: splice()
+        // Parâmetros do splice() para substituição
+        // 1º posição para substituir
+        // 2º quantos elementos serão retirados (> 0)
+        // 3º novos valores a serem inseridos
+
+        carros.splice(0, 1, 'Gol')
+        document.write('carros: ' + carros + '<br>')
+        carros.splice(1, 1, 'Apolo', 'Marea')
+        document.write('carros: ' + carros + '<br>')
+
+        // Colocando mais alguns carros com push() todos de uma vez
+        carros.push('Corsa', 'Tempra', 'Kadett', 'Palio', 'Civic')
+        document.write('carros: ' + carros + '<br>')
+
+        document.write('<hr>')
+
+        // PERCURSO DE VETOR: significa visitar cada um dos elementos para fazer algo com ele
+        
+        for (let i = 0; i < carros.length; i++) {
+            // Escrevendo os nomes de cada carro, um por linha
+            document.write(carros[i].toUpperCase() + '<br>')
+        }
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
