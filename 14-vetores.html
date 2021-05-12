@@ -154,11 +154,52 @@
 
         // PERCURSO DE VETOR: significa visitar cada um dos elementos para fazer algo com ele
         
+        // 1ª forma: usanado um FOR TRADICIONAL
         for (let i = 0; i < carros.length; i++) {
             // Escrevendo os nomes de cada carro, um por linha
             document.write(carros[i].toUpperCase() + '<br>')
         }
 
+        document.write('<hr>')
+
+        // 2ª forma: usando um FOR TRADICIONAL em ordem reversa
+        for (let i = carros.length -1; i >= 0; i--) {
+            document.write(carros[i].toLowerCase() + '<br>')
+        }
+
+        document.write('<hr>')
+
+        // 3ª forma: usando FOR..OF (é uma sintaxe simplificada que permite percorrer todo o vetor
+        //       na ordem crescente de posições )
+
+        for (let elemento of carros) {
+            document.write(elemento + '<br>')
+        }  /* nesse casso: elemento = uma variável que receberá cada elemento do veto que esta sendo percorrido
+                            carros = é o vetor que esta sendo percorrido 
+                            for..of calcula automaticamente quantas vezes será a repetição p/ percorrer todos os elementos */
+
+        document.write('<hr>')
+
+        // Determinando a oposição de um elemento dentro de um vetor 
+        let posicao = carros.indexOf('Marea') 
+        document.write(`Posição do Marea no vetor: ${posicao} <br>`)
+        posicao = carros.indexOf('Gol')
+        document.write(`Posição do Gol no vetor: ${posicao} <br>`)
+        posicao = carros.indexOf('Santana')  // Não existe
+        document.write(`Posição do Santana no vetor: ${posicao} <br>`)
+    
+        document.write('<hr>')
+
+        for (let i = 0; i < carros.length; i++) {
+            document.write(`${i + 1}: ${carros[i]} <br>`)
+        }
+
+        document.write('<hr>')
+
+        // determinando se um elemento existe ou não no vetor: includes()
+        let existe = carros.includes('Tempra')
+        document.write(`Tempra existe dentro do vetor carros? ${existe} <br>`)
+        document.write(`Marajó existe dentro do vetor carros? ${carros.includes('Marajó')} <br>`)
     </script>
 </head>
 <body>
