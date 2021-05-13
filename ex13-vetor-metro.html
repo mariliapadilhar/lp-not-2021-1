@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modelo de documento HTML</title>
+    <script>
+        // 'use strict' impede que variáveis sejam declaradas
+        // sem o uso de let, var ou const
+        // Inicializar variáveis diretamente é má prática de
+        // programação
+        'use strict'
+        
+        /*
+        
+            O ano é 2119. A prefeita Enza Valentina Faleiros Trajano 
+            Bittar da Silva inaugura a primeira linha do Metrô de Franca, 
+            no sentido norte-sul, com as seguintes estações: Santa Teresinha,
+            Estação, Centro, Jardim Lima e Aeroporto I.
+            
+            1) Crie um vetor vazio e depois insira as estações no
+                vetor. Faça um loop for TRADICIONAL para exibir as 
+                estações e depois passe um traço horizontal (<hr>).
+                
+            No ano seguinte, a linha foi expandida com a inauguração
+            das estações City Petrópolis, no extremo norte, e Aeroporto
+            IV, no extremo sul.
+            
+            2) Insira as novas estações no vetor nas posições apropriadas.
+                Faça um loop FOR..OF para exibir as estações e depois
+                passe um traço horizontal (<hr>).
+                
+            Já em 2125, foi criada a estação Vila Imperador, entre
+            as estações Santa Teresinha e Estação, para atender à grande
+            demanda da maior universidade da cidade, a Fatec de Franca.
+            Um ano depois, a estação Jardim Alvorada passou a funcionar
+            entre as estações Jardim Lima e Aeroporto I.
+            
+            3) Insira as novas estações no vetor nas posições apropriadas.
+                Faça um loop for TRADICIONAL EM SENTIDO INVERSO para exibir
+                as estações e depois passe um traço horizontal (<hr>).
+                
+            Em 2130, a estação Centro foi desativada, e em seu lugar duas
+            novas estações entraram em funcionamento: as estações 9 de Julho
+            e Champagnat.
+            
+            4) Modifique o vetor de acordo com as alterações.
+                Faça um loop for TRADICIONAL para exibir as estações e depois
+                passe um traço horizontal (<hr>).
+                
+            Em 2133, no entanto, Franca entrou em guerra com os 
+            restinguenses, que invadiram e destruíram as duas estações 
+            mais ao sul do metrô de Franca. Neste mesmo ano, em meio
+            à crise, foi fechada a estação Santa Teresinha.
+            
+            5) Modifique o vetor de acordo com as alterações.
+                Faça um loop FOR...OF para exibir as estações e depois
+                passe um traço horizontal (<hr>).            
+        */
+     
+        let estacoes = []
+
+        estacoes.push('Santa Teresinha','Estação', 'Centro', 'Jardim Lima', 'Aeroporto I')
+
+            for (let i = 0; i < estacoes.length; i++) {
+                document.write(estacoes[i] + '<br>')
+            }
+
+        document.write('<hr>')
+
+        estacoes.unshift('City Petrópolis')
+        estacoes.push('Aeroporto IV')
+
+            for (let listagem of estacoes) {
+                document.write(listagem + '<br>')
+            }
+
+        document.write('<hr>')
+
+        estacoes.splice(2, 0, 'Vila Imperador')
+        estacoes.splice(6, 0, 'Jardim Alvorada')
+        
+            for (let i = estacoes.length -1; i >= 0; i--) {
+                document.write(estacoes[i] + '<br>')
+            }
+
+        document.write('<hr>')
+
+        estacoes.splice(4, 1, '9 de Julho', 'Champagnat')
+
+            for (let i = 0; i < estacoes.length; i++) {
+                document.write(estacoes[i] + '<br>')
+            }
+
+        document.write('<hr>')
+
+        estacoes.splice(8, 2)
+        estacoes.splice(1, 1)
+
+            for (let listagem of estacoes) {
+                document.write(listagem + '<br>')
+            }
+
+        document.write('<hr>')
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
