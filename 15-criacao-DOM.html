@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<body>
+    <h1>Criação de elementos HTML via JavaScript</h1>
+    <p>Este arquivo demonstra  como criar novos elementos HTML usando JS</p>
+
+    <ul>
+        <li>Maçã</li>
+        <li>Banana</li>
+        <li>Uva</li>
+    </ul>
+
+
+    <script>
+        'use strict'
+
+        /* A INTRODUÇÃO DE UM NOVO ELEMENTO NO HTML VIA JS ENVOLVE DUAS ETAPAS:
+            
+        1) A criação do elemento, que é responsabilidade do proprietário (owner), ou seja, no document.
+        2) A incorporação do novo elemento na estrutura DOM é responsabilidade do 
+            pai (parent) do novo elemento
+        */
+
+        // Criando um novo elemento
+        const novoItem = document.createElement('li')
+
+        // Colocando conteúdo no novo elemento
+        novoItem.textContent = 'Laranja'
+
+        // Capturando o pai do novo elemento
+
+        // Seleciona o primeiro (e único) elemento do tipo ul no documento
+        const lista = document.querySelector('ul')
+
+        // Incorporando o novo elemento como filho de seu respectivo pai
+        lista.appendChild(novoItem)
+
+        const novoItem2 = document.createElement('li') // Etapa 1
+        novoItem2.textContent = 'Jabuticaba'
+        lista.appendChild(novoItem2) // Etapa 2
+
+        const novoItem3 = document.createElement('li')
+        novoItem3.textContent = 'Morango'
+        lista.appendChild(novoItem3)
+
+        const novoParag = document.createElement('P') // Etapa 1 
+        novoParag.textContent = 'Este parágrafo foi adicionado usando JS.'
+        novoParag.style.color = 'blue'
+        // body não precisa ser capturado, pode ser acessado diretamente via document.body
+        document.body.appendChild(novoParag) // Etapa 2 
+
+        const novaDiv = document.createElement('div')
+        novaDiv.textContent = 'Sou uma div'
+        novaDiv.style.background = 'yellow'
+        novaDiv.style.textAlign = 'center'
+        document.body.appendChild(novaDiv)
+
+        const novoItem4 = document.createElement('li')
+        novoItem4.textContent = 'Amora'
+        lista.appendChild(novoItem4)
+
+        // Conclusão: appendChild() sempre vai colocar o novo elemento 
+        // como ultimo filho de seu pai 
+
+        const novoItem5 = document.createElement('li')
+        novoItem5.textContent = 'Abacaxi'
+        // insertBefore() tem dois parâmetros:
+        // 1- o novo item a ser inserido
+        // 2º o item já existente, que servirá de referência
+        // para o local onde o novo item será inserido
+        lista.insertBefore(novoItem5, novoItem)
+
+        const novoItem6 = document.createElement('li')
+        novoItem6.textContent = 'Abacate'
+        lista.insertBefore(novoItem6, novoItem3)
+
+        const novoParag2 = document.createElement('p')
+        novoParag2.textContent = 'Este parágrafo foi inserido aqui com insertBefore()'
+        document.body.insertBefore(novoParag2, lista)
+
+        // inserindo um novo elemento no inicio da lista 
+        const novoItem7 = document.createElement('li')
+        novoItem7.textContent = 'Caju'
+        // usando o querySelector() para pegar o primeiro elemrnto do tipo li
+        const itemMaca = document.querySelector('li')
+        lista.insertBefore(novoItem7, itemMaca)
+
+        const novoItem8 = dcoument.createElement('li')
+        novoItem8.textContent = 'Ameixa'
+
+        // captura todos os elementos do tipo especificado e retorna um vetor contendo todos eles
+
+        const todosItens = document.querySelectorAll('li')
+        lista.insertBefore(novoItem8, todosItens[3])
+
+        // CONSLUSÕES:
+        //  1) insertBefore() permite posicionar o novo elemento entre os filhos já existentes de seu pai,
+        //      usando um outro elemento existente de referência
+        //  2) querySelectorAll() captura todos os elemtneod do tipo especificado dentro de um vetor
+    </script>
+</body>
+</html>
