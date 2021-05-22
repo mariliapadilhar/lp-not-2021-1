@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modelo de documento HTML</title>
+</head>
+
+<body>
+
+    <h1>Criação de novos elementos</h1>
+    <ol>
+
+    </ol>
+
+    <script>
+        // 'use strict' impede que vari�veis sejam declaradas
+        // sem o uso de let, var ou const
+        // Inicializar vari�veis diretamente � m� pr�tica de
+        // programa��o
+        'use strict'
+        
+        /*
+            Todos os elementos devem ser inseridos usando JavaScript.
+            
+            1) Insira três itens na lista ordenada, com os valores "Belarmina", 
+               "Luzinete" e "Roberval".
+
+            2) Insira na lista os itens "Adamastor", "Ildefonso", "Querência" e
+               "Turíbio", mantendo a ordem alfabética.
+
+            3) Insira um título de nível 2 logo abaixo do título de nível 1, com
+               o texto "Lista de candidatos".
+
+            4) Insira um parágrafo abaixo da lista ordenada, com o texto "Irão
+               para o segundo turno os dois candidatos mais votados.".
+
+        */
+
+        // capturando a lista
+        const lista = document.querySelector('ol')
+
+        // criação de um novo elemento
+        const itemBelarmina = document.createElement('li')
+
+        // colocando conteúdo no item
+        itemBelarmina.textContent = 'Belarmina'
+        //  Atribuindo o novo elemento a um pai
+        lista.appendChild(itemBelarmina)
+
+        const itemLuzinete = document.createElement('li')
+        itemLuzinete.textContent = 'Luzinete'
+        lista.appendChild(itemLuzinete)
+
+        const itemRoberval = document.createElement('li')
+        itemRoberval.textContent = 'Roberval'
+        lista.appendChild(itemRoberval)
+
+        // 2
+
+        const itemAdamastor = document.createElement('li')
+        itemAdamastor.textContent = 'Adamastor'
+        lista.insertBefore(itemAdamastor, itemBelarmina)
+
+        const itemIldefonso = document.createElement('li')
+        itemIldefonso.textContent = 'Ildefonso'
+        lista.insertBefore(itemIldefonso, itemLuzinete)
+
+        const itemQuerencia = document.createElement('li')
+        itemQuerencia.textContent = 'Querência'
+        lista.insertBefore(itemQuerencia, itemRoberval)
+
+        const itemTuribio = document.createElement('li')
+        itemTuribio.textContent = 'Turíbio'
+        lista.appendChild(itemTuribio)
+        
+        // 3
+
+        const titulo2 = document.createElement('h2')
+        titulo2.textContent = 'Lista de candidatos'
+        document.body.insertBefore(titulo2, lista)
+
+        // 4
+
+        const parag = document.createElement('p')
+        parag.textContent = 'Irão para o segundo turno os dois candidatos mais votados'
+        document.body.appendChild(parag)
+    </script>
+</body>
+</html>
