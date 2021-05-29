@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:mso="urn:schemas-microsoft-com:office:office" xmlns:msdt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modelo de documento HTML</title>
+</head>
+<body>
+    <h1>Estados do Sudeste e do Sul do Brasil</h1>
+    <ul>
+
+    </ul>
+    <script>
+        // 'use strict' impede que variáveis sejam declaradas
+        // sem o uso de let, var ou const
+        // Inicializar variáveis diretamente é má prática de
+        // programação
+        'use strict'
+        
+        /*
+            1) Crie um vetor vazio.
+
+            2) Usando o método de inserção NO INÍCIO do vetor, coloque os seguintes Estados
+               no vetor:
+               São Paulo
+               Santa Catarina
+               Rio Grande do Sul
+               Rio de Janeiro
+               Paraná
+               Minas Gerais
+               Espírito Santo
+
+            3) Percorra o vetor com um loop for..of, crie um item de lista para cada
+               um dos elementos do vetor e insira-o na lista não ordenada.
+
+        */
+        
+        // 1
+        let estados = []
+
+        // 2
+        estados.unshift('São Paulo')
+        estados.unshift('Santa Catarina')
+        estados.unshift('Rio Grande do Sul')
+        estados.unshift('Rio de Janeiro')
+        estados.unshift('Paraná')
+        estados.unshift('Minas Gerais')
+        estados.unshift('Espiríto Santo')
+
+        // 3
+        const lista = document.querySelector('ul')
+
+        for (let estado of estados) {
+            let item = document.createElement('li')
+            item.textContent = estado
+            lista.appendChild(item)
+        }
+    </script>
+</body>
+</html>

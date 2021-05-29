@@ -1,41 +1,140 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-br" xmlns:mso="urn:schemas-microsoft-com:office:office" xmlns:msdt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculadora com registro</title>
     <style>
-        * {
-            font-family: Calibri, Arial, Sans-serif;
+        * { /* Todos os elementos */
+            font-family: Calibri, Arial, sans;
         }
-
-        #fita {
-            background-color: rgb(236, 236, 211);
-            font-family: 'Courier New', Courier, monospace;
+        #fita { /* Elemento cujo id é fita */
+            background-color: khaki;
             text-align: right;
             font-size: 20px;
-            width: 250px1;
-            padding-right: 20px;
-            padding-bottom: 3px;
-            margin-top: 30px;
+            width: 250px; /* Largura */
+            padding: 20px;      /* Espaçamento interno */
+            /* 4 valores no margin:
+                1º top (superior)
+                2º right (direita)
+                3º bottom (inferior)
+                4º left (esquerdo)
+                Começa de cima e segue o sentido horário
+                Quando temos auto à esquerda e à direita, o 
+                elemento fica centralizado na horizontal
+            */
+            margin: 30px auto 0 auto;   /* Espaçamento externo */
+            /* Valores do box-shadow:
+               1º deslocamento horizontal
+               2º deslocamento vertical
+               3º embaçamento da sombra
+               4º cor da sombra
+            */
+            box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.3);
+        }
+        #fita p {   /* Todos os p que estiverem dentro da div fita */
+            font-family: Consolas, "Courier New", monospace;
+        }
+        #total {
+            font-weight: bold; /* Negrito */
         }
     </style>
+
+<!--[if gte mso 9]><xml>
+<mso:CustomDocumentProperties>
+<mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_SharedWithUsers msdt:dt="string">Desenvolvimento Web I-A-N-D.S.M.-109-20211 Members</mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_SharedWithUsers>
+<mso:SharedWithUsers msdt:dt="string">100;#Desenvolvimento Web I-A-N-D.S.M.-109-20211 Members</mso:SharedWithUsers>
+</mso:CustomDocumentProperties>
+</xml><![endif]-->
 </head>
 <body>
-    <h1>Calculadora com Registro</h1>
+    
+    <h1>Calculadora com registro</h1>
+    
+    <label for="num">Número:</label>
+    <input type="number" id="num">
+    <button id="limpar">Limpar</button>
 
-    <label for = "num">Número:</label>
-    <input type = "number" id = "num" value = "0">
-    <button id = "limpar">Limpar</button>
-
-    <div id = "fita">
+    <div id="fita">
         <hr>
-        <p id = "total">0</p>
+        <p id="total">0</p>
     </div>
-
+    
     <script>
+        // Ativa verificações adicionais de variáveis
+        // Modo "chato" do JavaScript
         'use strict'
+
+        /* Captura dos elementos */
+        const elNum = document.querySelector('#num')
+        const elLimpar = document.querySelector('#limpar')
+        const elFita = document.querySelector('#fita')
+        let elTraco = document.querySelector('hr')
+        let elTotal = document.querySelector('#total')
+
+        // Vetor de números
+        let numeros = []      // Vetor vazio
+
+        // event é um parâmetro que é passado para toda função
+        // associada a um evento no DOM. Quando não precisamos
+        // dele (como em todos os exercícios até agora), podemos
+        // ignorá-lo
+        function adicionarNumero(event) {
+            
+            // Só quando for pressionada a tecla Enter
+            if(event.key === 'Enter') {
+                
+                // Pegamos o valor do input e *tentamos* transformar
+                // em número
+                let num = Number(elNum.value)
+
+                if(! isNaN(num)) {      // Se a conversão tiver dado certo
+
+                    // Adicionar o número ao vetor
+                    numeros.push(num)
+
+                    // Criar um novo parágrafo para exibir num e
+                    // inserir esse parágrafo antes do traço
+                    let paragNum = document.createElement('p')
+                    paragNum.textContent = num
+                    elFita.insertBefore(paragNum, elTraco)
+
+                    // Percorrer o vetor usando um loop for..of
+                    // para somar os números e mostrar no total
+                    let soma = 0
+                    for(let n of numeros) {
+                        soma += n
+                    }
+                    elTotal.textContent = soma
+
+                    // Limpa o input
+                    elNum.value = ''
+
+                }
+            }
+        }
+
+        function limpar() {
+            // Reseta o conteúdo da fita (recria elementos)
+            elFita.innerHTML = '<hr><p id="total">0</p>'
+
+            // Como o traço e o parágrafo do total foram recriados,
+            // eles precisam ser capturados novamente
+            elTraco = document.querySelector('hr')
+            elTotal = document.querySelector('#total')
+
+            // Reinicia o vetor, vazio
+            numeros = []
+
+            elNum.value = ''    // Limpa o input num
+            elNum.focus()       // Coloca o foco no input num
+        }
+
+        // Quando uma tecla for pressionada para baixo no input num 
+        // (evento keydown), será invocada a função adicionarNumero
+        elNum.addEventListener('keydown', adicionarNumero)
         
+        elLimpar.addEventListener('click', limpar)
         
     </script>
 </body>
