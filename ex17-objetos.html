@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:mso="urn:schemas-microsoft-com:office:office" xmlns:msdt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página modelo</title>
+    <script>
+        /*
+            1) Declare um objeto pet1 que represente um cão e preencha as
+            seguintes propriedades:
+            - nome
+            - raça
+            - cor
+            - sexo
+            - nome do pai (nome da propriedade com espaços)
+            - nome da mãe (nome da propriedade com espaços)
+        */
+        
+       let pet1 = {
+           nome: 'Pandora',
+           'raça': 'Pitbull',
+           cor: 'Marrom',
+           sexo: 'F',
+           'nome do pai': 'Tobias',
+           'nome da mãe': 'Puma',
+       }
+
+        // 2) Crie um objeto pet2, copiando do primeiro:
+        //      let pet2 = pet1 e troque algumas características do pet2
+
+        // let pet2 = pet1 duplicar dessa forma não funciona 
+
+        /* Duplicar cada uma das propriedades em um novo objeto
+            para isso, podemos usar a chamada "síntaxe de espalhamento"
+
+            Vai gerar uma cópia de cada uma das propriedades de pet1 em pet2
+        */
+
+       let pet2 = {...pet1}
+       //let pet2 = pet1
+       pet2.nome = 'Chico'
+       pet2.sexo = 'M'
+       pet2['nome da mãe'] = 'Lola'
+
+       /* 3) Use dois for..in para listar os objetos: pet1 e pet2 */
+
+       for (let cao in pet1) {
+           document.write(`${cao} = ${pet1[cao]}<br>`)
+       }
+
+       document.write('<hr>')
+
+       for (let cao in pet2) {
+           document.write(`${cao} = ${pet2[cao]}<br>`)
+       }
+
+    </script>
+
+
+</head>
+<body>
+    
+</body>
+</html>

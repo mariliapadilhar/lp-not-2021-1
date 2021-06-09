@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:mso="urn:schemas-microsoft-com:office:office" xmlns:msdt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página modelo</title>
+    <script>
+        // Ativa verificações adicionais de variáveis
+        // Modo "chato" do JavaScript
+        'use strict'
+
+        // Minicadastro de pacientes
+        const paciente1 = ['Bartira Barbosa', 40, 'F', 'bartirab@gmail.com', 1.67, 56]
+        const paciente2 = ['Asdrúbal Azevedo', 67, 'M', null, 1.78, 95]
+        const paciente3 = ['Lindomar Lustosa', 33, 'M', 'lindomar@bol.com.br', 1.63, 58]
+        const paciente4 = ['Euripa Emiliano', 55, 'F', 'euripae@hotmail.com', 1.8, 89]
+
+        // Calculando o IMC do paciente 3 (imc = peso / (altura)²)
+        let imc3 = paciente3[5] / (paciente3[4] ** 2)
+        document.write(`O IMC do paciente ${paciente3[0]} é ${imc3}<br>`)
+
+        /**********************************************************
+         * OBJETOS
+         * Um objeto é uma estrutura da linguagem JS que permite
+         * armazenar vários valores dentro de uma única variável
+         * em posições NOMEADAS (e não numeradas, como no vetor)
+        **********************************************************/
+
+        // Criação de um objeto vazio
+        const objPaciente1 = {}             // Modo mais recente
+        const objPaciente2 = new Object()   // Modo tradicional
+
+        // Armazenando dados em um objeto que foi criado vazio
+        // "nome", aqui, é a POSIÇÃO NOMEADA na qual será armazenada a informação
+        // Essa posição é chamada ATRIBUTO ou PROPRIEDADE
+        objPaciente1.nome = 'Bartira Barbosa'
+        objPaciente1.idade = 40
+        objPaciente1.sexo = 'F'
+        objPaciente1.email = 'bartirab@gmail.com'
+        objPaciente1.altura = 1.67
+        objPaciente1.peso = 56
+
+        // As propriedades podem ser criadas em qualquer ordem
+        objPaciente2.nome = 'Asdrúbal Azevedo'
+        objPaciente2.email = null
+        objPaciente2.peso = 95
+        objPaciente2.idade = 67
+        objPaciente2.sexo = 'M'
+        // Quando precisamos acessar uma propriedade que contém espaços ou acentos,
+        // usamos uma outra sintaxe, a sintaxe do colchete
+        objPaciente2['documento de identidade'] = '22.222.222-22'
+        // A sintaxe dos colchetes SEMPRE funciona, mesmo quando o nome da propriedade 
+        // tem uma palavra só
+        objPaciente2['altura'] = 1.78  // Equivale a: objPaciente2.altura = 1.78
+
+        // Criando um objeto já com propriedades e seus valores
+        const objPaciente3 = { nome: 'Lindomar Lustosa', idade: 33, sexo: 'M', email: 'lindomar@bol.com.br', altura: 1.63, peso: 58 }
+
+        // As propriedades podem ser quebradas em linhas para melhor legibilidade
+        const objPaciente4 = {
+            // Nomes de propriedade normalmente são uma única palavra sem acentos
+            idade: 55,
+            sexo: 'F',
+            nome: 'Euripa Emiliano',
+            // Em alguns casos, precisamos lidar com propriedades contendo
+            // espaços ou acentos. Nesses casos, o nome da propriedade deve
+            // vir entre aspas (simples ou duplas)
+            'documento de identidade': '44.444.444-44',
+            peso: 89,
+            email: 'euripae@hotmail.com',
+            altura: 1.8
+        }
+
+        let imc4 = objPaciente4.peso / (objPaciente4.altura ** 2)
+        document.write(`O IMC da paciente ${objPaciente4.nome} é ${imc4}<br>`)
+        
+        // Acessando as propriedades de um objeto por meio de variáveis que
+        // contêm o nome das propriedades. Nesse caso, é necessário usar a
+        // sintaxe dos colchetes
+        let nomeProp1 = 'nome'
+        let nomeProp2 = 'idade'
+        let nomeProp3 = 'peso'
+
+        document.write(`Nome do paciente 4: ${objPaciente4[nomeProp1]}<br>`)
+        document.write(`Idade do paciente 4: ${objPaciente4[nomeProp2]}<br>`)
+        document.write(`Peso do paciente 4: ${objPaciente4[nomeProp3]}<br>`)
+
+        // Como descobrir o nome de todas as propriedades de um objetos?
+        // Resposta: loop for..in
+
+        document.write('---------------------------------<br>')
+
+        // Descobrindo as propriedades do objPaciente2
+        for(let prop in objPaciente2) {
+            document.write(prop + '<br>')
+        }
+
+        document.write('---------------------------------<br>')
+
+        // Listagem de um objeto com o loop for..in
+        for(let key in objPaciente1) {
+            document.write(`${key} => ${objPaciente1[key]}<br>`)
+        } 
+
+    </script>
+
+<!--[if gte mso 9]><xml>
+<mso:CustomDocumentProperties>
+<mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_SharedWithUsers msdt:dt="string">Desenvolvimento Web I-A-N-D.S.M.-109-20211 Members</mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_SharedWithUsers>
+<mso:SharedWithUsers msdt:dt="string">100;#Desenvolvimento Web I-A-N-D.S.M.-109-20211 Members</mso:SharedWithUsers>
+</mso:CustomDocumentProperties>
+</xml><![endif]-->
+</head>
+<body>
+    
+</body>
+</html>
